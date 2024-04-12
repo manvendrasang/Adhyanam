@@ -8,6 +8,7 @@ import Contact from './pages/Contact.jsx'
 import Faq from './pages/Faq.jsx'
 import Scholarships from './pages/Scholarships.jsx'
 import Intern from './pages/Intern.jsx'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* value */}
-    <RouterProvider router={router} />   
+      <ChakraProvider>
+        <RouterProvider router={router} />
+      </ChakraProvider>
   </React.StrictMode>,
 )

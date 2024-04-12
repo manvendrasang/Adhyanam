@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
+import { FaAngleDown } from 'react-icons/fa';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    Logo
+                    Adhyanam
                 </Link>
                 <div className={isOpen ? 'navbar-menu active' : 'navbar-menu'}>
                     <Link to="/" className="navbar-item" onClick={toggleNavbar}>
@@ -34,6 +35,7 @@ function Navbar() {
                         onMouseLeave={handleScholarshipMouseLeave}
                     >
                         Scholarships
+                        <FaAngleDown />
                         {isScholarshipHovered && (
                             <div className="dropdown-content">
                                 <Link to="/scholarships/category1">Category 1</Link>
