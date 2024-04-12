@@ -8,6 +8,7 @@ import Contact from './pages/Contact.jsx'
 import Faq from './pages/Faq.jsx'
 import Scholarships from './pages/Scholarships.jsx'
 import Intern from './pages/Intern.jsx'
+import Login from './components/Login.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/contact',
     element: <Contact />
+  },
+  {
+    path: '/login',
+    element: <Login />
   }
 ]);
 
