@@ -1,4 +1,4 @@
-/*avbar.css */
+/* Navbar.css */
 * {
     top: 0;
     left: 0;
@@ -24,18 +24,24 @@
     font-size: 1.5rem;
     text-decoration: none;
     color: #fff;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
 }
 
 .navbar-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 2rem; /* Equal spacing between navbar items */
 }
 
 .navbar-item {
     text-decoration: none;
     color: #fff;
-    margin-left: 1rem;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+}
+
+.navbar-item:first-child {
+    margin-left: 0; /* Remove margin for the first navbar item */
 }
 
 .navbar-toggle {
@@ -64,12 +70,33 @@
         display: block;
         font-size: 1.5rem;
     }
+}
 
+.dropdown-container {
+    position: absolute;
+    top: 100%; /* Position below the navbar item */
+    left: 0;
+    background-color: #333; /* Background color of the dropdown */
+    padding: 10px;
+    display: none; /* Initially hide the dropdown */
+    z-index: 1000; /* Ensure dropdown is above other content */
 }
 
 .dropdown-content {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-link {
+    text-decoration: none;
+    color: #fff;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+/* Adjust styles for dropdown when it's visible */
+.dropdown-container.active {
+    display: block;
 }
 
 .btn {
@@ -78,7 +105,7 @@
     flex-direction: column;
     align-items: center;
     padding: 6px 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
     border-radius: 6px;
     border: none;
     text-decoration: none;

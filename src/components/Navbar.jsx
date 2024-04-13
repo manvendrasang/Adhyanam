@@ -11,7 +11,7 @@ function Navbar() {
         setIsOpen(!isOpen);
     };
 
-    const handleScholarshipClick = () => {
+    const toggleScholarshipDropdown = () => {
         setIsScholarshipClicked(!isScholarshipClicked);
     };
 
@@ -27,17 +27,17 @@ function Navbar() {
                     </Link>
                     <div
                         className="navbar-item"
-                        onClick={handleScholarshipClick}
+                        onClick={toggleScholarshipDropdown} // Toggle dropdown visibility
                     >
                         Scholarships
                         <FaAngleDown />
-                        {isScholarshipClicked && (
-                            <div className="dropdown-content">
-                                <Link to="/scholarships/category1">Category 1</Link>
-                                <Link to="/scholarships/category2">Category 2</Link>
-                                <Link to="/scholarships/category3">Category 3</Link>
-                            </div>
-                        )}
+                    </div>
+                    <div className={isScholarshipClicked ? 'dropdown-container active' : 'dropdown-container'}>
+                        <div className="dropdown-content">
+                            <Link to="/scholarships/category1" className="dropdown-link">Category 1</Link>
+                            <Link to="/scholarships/category2" className="dropdown-link">Category 2</Link>
+                            <Link to="/scholarships/category3" className="dropdown-link">Category 3</Link>
+                        </div>
                     </div>
                     <Link to="/faq" className="navbar-item" onClick={toggleNavbar}>
                         FAQ's
