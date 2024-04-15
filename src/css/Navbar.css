@@ -1,16 +1,17 @@
 /* Navbar.css */
-* {
-    top: 0;
-    left: 0;
-    position: relative;
-}
 
+/* Navbar container */
 .navbar {
-    background-color: #636060;
+    position: sticky;
+    top: 0;
+    background-color: rgba(99, 96, 96, 0.8);
     color: #fff;
     padding: 1rem 0;
+    z-index: 1000;
+    width: 100%;
 }
 
+/* Container for navbar items */
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -20,35 +21,42 @@
     padding: 0 1rem;
 }
 
+/* Logo link */
 .navbar-logo {
     font-size: 1.5rem;
     text-decoration: none;
     color: #fff;
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Navbar menu links */
 .navbar-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 2rem; /* Equal spacing between navbar items */
+    gap: 2rem;
 }
 
+/* Individual navbar item */
 .navbar-item {
     text-decoration: none;
     color: #fff;
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-family: 'Montserrat', sans-serif;
+    position: relative; /* Position relative for dropdown */
 }
 
+/* Remove margin for the first navbar item */
 .navbar-item:first-child {
-    margin-left: 0; /* Remove margin for the first navbar item */
+    margin-left: 0;
 }
 
+/* Navbar toggle button for mobile */
 .navbar-toggle {
     display: none;
     cursor: pointer;
 }
 
+/* Media query for responsive navbar */
 @media screen and (max-width: 768px) {
     .navbar-menu {
         display: none;
@@ -57,7 +65,7 @@
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: #333;
+        background-color: rgba(51, 51, 51, 0.8);
     }
 
     .navbar-item {
@@ -72,21 +80,25 @@
     }
 }
 
+/* Dropdown container */
 .dropdown-container {
     position: absolute;
-    top: 100%; /* Position below the navbar item */
+    top: calc(100% + 10px); /* Position below the navbar item */
     left: 0;
-    background-color: #333; /* Background color of the dropdown */
+    background-color: rgba(51, 51, 51, 0.8);
     padding: 10px;
-    display: none; /* Initially hide the dropdown */
-    z-index: 1000; /* Ensure dropdown is above other content */
+    display: none;
+    z-index: 1000;
+    width: 200px; /* Adjust dropdown width */
 }
 
+/* Dropdown content */
 .dropdown-content {
     display: flex;
     flex-direction: column;
 }
 
+/* Dropdown link */
 .dropdown-link {
     text-decoration: none;
     color: #fff;
@@ -99,13 +111,14 @@
     display: block;
 }
 
+/* Button style */
 .btn {
     margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 6px 14px;
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-family: 'Montserrat', sans-serif;
     border-radius: 6px;
     border: none;
     text-decoration: none;
@@ -118,7 +131,15 @@
     touch-action: manipulation;
 }
 
+/* Button focus style */
 .btn:focus {
     box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
     outline: 0;
+}
+
+/* Responsive styles for button */
+@media (min-width: 768px) {
+    .btn {
+        padding: 0 40px;
+    }
 }
